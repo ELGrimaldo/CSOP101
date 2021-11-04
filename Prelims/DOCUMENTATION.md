@@ -6,6 +6,10 @@
 
 <br>
 
+### Table of contents
+1. [Prelim Lesson 12:Self Assessment](#Prelim Lesson 12:Self Assessment) 
+
+<br>
 ---
 
 
@@ -177,4 +181,108 @@ Using nested selection statement,   create a C++ program that will be able to pe
     >Input year level: 6 <br>
     >Invalid Value! Year Level must be 1 to 4
 
+---
+## Prelim Exam
+- Date of submission: 09/17/21
+- **Instructions:** 
+Using C++ language, create a program that will perform the given algorithm using variables,
+data types, operators, input/output statements, and selection statements.
+- **Problem:**
+Using nested selection statement, create a program that will determine the discount of a customer based on the total amount purchase and membership details. If the customer is a member, he is qualified for discounts based on the total amount purchase, otherwise, no discount will be given to a customer.
+
+    Total Amount Purchased     |     Member Discount Percentage  |
+    | ------------------------ | :-----------------------------: |
+    | P5,000.00 – P10,000.00   |              5%                 |
+    | P10,001.00 – P30,0000.00 |            7%                   |
+    | P30,001.00 – P50,000.00  |              10%                |
+    | Above P50,000.00         |                 15%             | 
+
+- **Test Requireents**
+    - [x] Input the total amount purchased.
+        ```c++
+        cout << "Amount Purchased: ";
+        cin >> purchasedAmount;
+        ```
+    - [x] Ask the customer if he is a member or not.
+        ```c++
+        cout << "Are you a member?(y/n): ";
+        cin >> isMember;
+        ```
+    - [x] Compute for the discount amount based on the discount percentage. Use the formula discount = total amount purchased x discount percentage.
+        ```c++
+        if (purchasedAmount >= 5000.00 && purchasedAmount <= 10000.00)  {
+                discount = purchasedAmount * 0.05; 
+            } else if (purchasedAmount > 10000.00 && purchasedAmount <=     30000.00){
+                discount = purchasedAmount * 0.07;
+            } else if (purchasedAmount > 30000.00 && purchasedAmount <=     50000.00){
+                discount = purchasedAmount * 0.1;
+            } else if (purchasedAmount > 50000.00){
+                discount = purchasedAmount * 0.15;
+            } else {
+                discount = 0;
+            }
+        ```
+    - [x] Compute for the total discounted amount using the formula: total discounted amount = total amount purchased – discount
+        ```c++
+            DiscountedAmount = purchasedAmount - discount;
+        ```
+    - [x] Display the discount amount and the total discounted amount.
+        ```c++
+            cout << "Discount Amount: " << discount << endl;
+            cout << "Total Discounted Amount: "<< DiscountedAmount;
+        ```
+ 
+
+
+- Solution in `C++`
+    ```c++
+    #include <iostream>
+    #include<bits/stdc++.h>
+    using namespace std;
+
+
+
+    int main(){
+
+        float purchasedAmount; 
+        char isMember; 
+        float discount = 0.0;
+        float DiscountedAmount;
+
+        cout << "Amount Purchased: ";
+        cin >> purchasedAmount;
+
+        cout << "Are you a member?(y/n): ";
+        cin >> isMember;
+
+        if (isMember == 'y'){
+            if (purchasedAmount >= 5000.00 && purchasedAmount <= 10000.00)  {
+                discount = purchasedAmount * 0.05; 
+            } else if (purchasedAmount > 10000.00 && purchasedAmount <=     30000.00){
+                discount = purchasedAmount * 0.07;
+            } else if (purchasedAmount > 30000.00 && purchasedAmount <=     50000.00){
+                discount = purchasedAmount * 0.1;
+            } else if (purchasedAmount > 50000.00){
+                discount = purchasedAmount * 0.15;
+            } else {
+                discount = 0;
+            }
+            DiscountedAmount = purchasedAmount - discount;
+            cout << "Discount Amount: " << discount << endl;
+            cout << "Total Discounted Amount: "<< DiscountedAmount ;
+        } else if (isMember == 'n'){
+            cout << "Discount Amount: " << discount << endl;
+            cout << "Total Discounted Amount: "<< purchasedAmount ;
+        } 
+
+
+
+        return 0;
+    };
+    ```
+    **Test-case 1:**
+    >Amount Purchased: 5000 <br>
+    >Are you a member?(y/n): y <br>
+    >Discount Amount: 250 <br>
+    >Total Discounted Amount: 4750
 

@@ -1,6 +1,7 @@
 /*
 Activity Name: SemiFinal Self-Assessment 1
 Submitted by: James Leo C. Grimaldo
+Github Repo: https://github.com/ELGrimaldo/CSOP101
 Date: 10/31/21
 
 Instructions:
