@@ -1,7 +1,10 @@
 
-# C++ Portfolio Repository
+# CSOP101 Portfolio Repository
 
-### CSOP101 - Object Oriented Programming
+## C++ - Object Oriented Programming
+**Instructor:** Cheeky Rose Villamarzo <br>
+**Author:** [James Leo C. Grimaldo](https://github.com/ELGrimaldo) <br>
+**Project Repository:** [C++_OOP](https://github.com/ELGrimaldo/CPP_OOP)
 
 This Repository consist of four directory for each term of the semester.
 
