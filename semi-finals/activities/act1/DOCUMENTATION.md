@@ -6,6 +6,58 @@
 
 <br>
 
+## Files and folder
+This activity consist of 2 program files [main.cpp](https://github.com/ELGrimaldo/CSOP101/blob/master/semi-finals/activities/act1/main.cpp) and [interface.h](https://github.com/ELGrimaldo/CSOP101/blob/master/semi-finals/activities/act1/interface.h), it can be found on github repository using this link [Semi Final Activity 1](https://github.com/ELGrimaldo/CSOP101/blob/master/semi-finals/activities/act1)
+
+- | File Name | Description |
+  | --------- | ----------- |
+  | [main.cpp](https://github.com/ELGrimaldo/CSOP101/blob/master/semi-finals/activities/act1/main.cpp) | Contains main method of the program. |
+  | [interface.h](https://github.com/ELGrimaldo/CSOP101/blob/master/semi-finals/activities/act1/interface.h) | contains base class and 3 derived classes. | 
+  | [DOCUMENTATION.md](https://github.com/ELGrimaldo/CSOP101/blob/master/semi-finals/activities/act1/DOCUMENTATION.md) | Contains documentation of this program |
+
+## Class and Variable names
+- Based on the given requirement, this program consist of variables that are used in main method and classes that act as a based class and derived classes.
+    - `Installment` Class will act as based class consist of public varibles `tuitionFee`, `numUnits`, `amtPerUnit`, and `totalFee`. These variable will act as interface and will be used once the base class was inherited in derived classes. There are also varibles with pre-assigned values.
+      |  Variables   | Data Type | Value|  Description |
+      | :----------: | :-------: | :--: |----- |
+      | `tuitionFee` | `double`  | Null | Store computed amount using `computeTuitionFee()` method. |
+      | `numUnits `  | `double`  | Null | Store input numbers of units to be taken. |
+      | `amtPerUnit` | `double`  | Null | Store input amouunt per units to be taken. |
+      | `totalFee`   | `double`  | Null | Store computed total fee using computeTotalFee() method. |
+      | `miscFee`    | `double`  | 3000.00 | Store Miscellaneous Fee |
+      | `labFee`     | `double`  | 1000.00 | Store Laboratory Fee |
+
+    - Derived classes are almost the same except its class names and the algorithm inside methods. 
+        | Derived Classes | Description | 
+        | :-------------: | ----------- |
+        | `class ThreeMonths` | consist of method that will compute installment fee for Three months. |
+        | `class FourMonths` | consist of method that will compute installment fee for four months. |
+        | `class FiveMonths` | consist of method that will compute installment fee for five months. | 
+
+        These derived classes consist of same method names that will compute Intsallment fee which is `displayInstallment()` that consist of one variable `installment` that will be returned once `displayInstallment` was called. 
+
+        | Variable Name | Data Type | Value | Description | 
+        | :-----------: | :-------: | ----- | ----------- | 
+        | `installment` | `double`  |  computeTotalFee() / 3; | this variable was used in `displayInstallment()` method under `ThreeMonths` class. |
+        | `installment` | `double`  |  computeTotalFee() / 4; | this variable was used in `displayInstallment()` method under `FourMonths` class.|
+        | `installment` | `double`  |  computeTotalFee() / 4; | this variable was used in `displayInstallment()` method under `FiveMonths` class.|
+
+## Classes and Variables used in MAIN method
+- Interface header file was imported in main file using `#include "interface.h"` in order to uses its classes. 
+    - | Assigned Variable Name | Class Name | Class Type |
+      | :--------------------: | :--------: | ---------- |
+      | `installment`          | `Installment` | Base Class | 
+      | `threeMonths`          | `ThreeMonths` | Derived Class | 
+      | `fourMonths`          | `FourMonths` | Derived Class | 
+      | `fiveMonths`          | `FiveMonths` | Derived Class | 
+    
+    - | Variable Name | Data Type | Value | Description |
+      | :-----------: | :-------: | :---: | ----------- |
+      | `numUnits`      | `double`  | Null  | It will temporarily store input value of number of units. |
+      | `amtPerUnit`    | `double`  | Null  | It will temporarily store input value of amount per Units. |
+
+
+
 ## Instructions:
 - Using OOP Interface approach, write a program that will determine the monthly payment of school fee based on a installment basis.
 
@@ -113,45 +165,29 @@
 
         * [x] Compute for monthly installment. Use the formula total fee / number of months. (5pts)
             ```cpp
+            //method for 3 months.
+            double displayInstallment(){
+                installment = computeTotalFee() / 3;
+                return installment;
+            }
+            ```
             
-            //derived classes for 3 months
-            class ThreeMonths: public Installment{
-                public:
-                    double installment;
 
-                    double displayInstallment(){
-                        installment = computeTotalFee() / 3;
-                        return installment;
-                    }
-            };
+            ```cpp
+            //method for 4 months.
+            double displayInstallment(){
+                installment = computeTotalFee() / 4;
+                return installment;
+            }
+            
             ```
 
             ```cpp
-            //derived classes for 4 months
-            class FourMonths: public Installment{
-                public:
-                    double installment;
-
-
-                    double displayInstallment(){
-                        installment = computeTotalFee() / 4;
-                        return installment;
-                    }
-            };
-            ```
-
-            ```cpp
-            //derived classes for 5 months
-            class FiveMonths: public Installment{
-                public:
-                    double installment;
-
-
-                    double displayInstallment(){
-                        installment = computeTotalFee() / 5;
-                        return installment;
-                    }
-            };
+            //method for 5 months.
+            double displayInstallment(){
+                installment = computeTotalFee() / 5;
+                return installment;
+            }
             ```
 
         * [x] Display all the necessary information such as:
@@ -174,9 +210,10 @@
                 ```
             * [x] monthly payment for 3, 4, and 5 months (10pts)
                 ```cpp
-                threeMonths.setNumAndAmtperUnit(numUnits, amtPerUnit);
-                fourMonths.setNumAndAmtperUnit(numUnits, amtPerUnit);
-                fiveMonths.setNumAndAmtperUnit(numUnits, amtPerUnit);
+                cout<< "3 MONTHS: " << threeMonths.displayInstallment()<<endl;
+                cout<< "4 MONTHS: " << fourMonths.displayInstallment()<<endl;
+                cout<< "5 MONTHS: " << fiveMonths.displayInstallment()<<endl;
+            
                 ```
             * [x] display all amount in two decimal places (5 pts)
                 ```cpp
