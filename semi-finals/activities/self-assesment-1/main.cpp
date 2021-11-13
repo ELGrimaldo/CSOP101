@@ -31,10 +31,10 @@ monthly payment = total amount / number of months to pay
 */
 
 #include<iostream>
-#include "lending.h" // Include atmClass
+#include "lending.h" // Include lendClass
 #include <string>
 #include <iomanip>
-using namespace std;
+using namespace std;    
 
 int main(){
 

@@ -1,7 +1,7 @@
 # Prelims Code Documentation
 
 **Instructor:** Cheeky Rose Villamarzo <br>
-**Author:**[James Leo C. Grimaldo](https://github.com/ELGrimaldo) <br>
+**Author:** [James Leo C. Grimaldo](https://github.com/ELGrimaldo) <br>
 **Project Repository:** [C++_OOP](https://github.com/ELGrimaldo/CPP_OOP)
 
 <br>
